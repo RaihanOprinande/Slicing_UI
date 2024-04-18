@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slice_ui/Screen_Page/Login_Page.dart';
+import 'package:slice_ui/Screen_Page/Register_Page.dart';
 
 class WelcomPage extends StatefulWidget {
   const WelcomPage({super.key});
@@ -66,7 +67,10 @@ class _WelcomPageState extends State<WelcomPage> {
                     SizedBox(height: 20,),
 
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => RegisterPage()));
+                      },
                       child: Container(
                         width: 320,
                         height: 50,

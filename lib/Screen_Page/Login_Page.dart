@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:slice_ui/Screen_Page/Register_Page.dart';
 import 'package:slice_ui/Screen_Page/Welcome_Page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -131,7 +132,8 @@ class _LoginPageState extends State<LoginPage> {
                             text: 'sign up',
                             recognizer: TapGestureRecognizer()
                               ..onTap = (){
-
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (_) =>RegisterPage()));
 
                               },
                             style: TextStyle(
