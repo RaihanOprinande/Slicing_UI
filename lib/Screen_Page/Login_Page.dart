@@ -15,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     bool varBool = true;
+    bool obsecurepassword = true;
     return Scaffold(
 
       resizeToAvoidBottomInset: false,
@@ -65,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      obscureText: obsecurepassword,
                       decoration: InputDecoration(
                           fillColor: Colors.grey.withOpacity(0.2),
                           filled: true,
@@ -72,9 +74,18 @@ class _LoginPageState extends State<LoginPage> {
                               borderSide: BorderSide.none,
                               borderRadius: BorderRadius.all(Radius.circular(50))
                           ),
-                          hintText: 'Password'
+                          hintText: 'Password',
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              obsecurepassword = !obsecurepassword;
+                            });
+                          },
+                          icon: Icon(obsecurepassword
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                        ),),
                       ),
-                    ),
                     SizedBox(height: 40,),
                     MaterialButton(onPressed: (){},
                     padding: EdgeInsets.symmetric(horizontal: 175, vertical: 15),
